@@ -5,6 +5,10 @@ app.get("/", function (req, res) {
   res.send('{ "response": "Hello, Welcome to Docker" }');
 });
 
+app.get("/test", function (req, res) {
+  res.send('{ "response": "Hello, Welcome to Test" }');
+});
+
 app.get("/will", function (req, res) {
   res.send('{ "response": "Hello World" }');
 });
