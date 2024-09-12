@@ -1,5 +1,5 @@
 # Use the latest version of the Node.js image as the base image
-FROM node:latest  
+FROM node:18-alpine
 
 # Set the working directory inside the container to /usr/src/app
 WORKDIR /usr/src/app  
@@ -11,7 +11,7 @@ COPY nodeapp/* /
 RUN npm install  
 
 # Expose port 3000 to allow incoming connections to the container
-EXPOSE 3000  
+EXPOSE 5000  
 
 # Start the application by running the "npm start" command
 CMD [ "npm", "start" ]  
