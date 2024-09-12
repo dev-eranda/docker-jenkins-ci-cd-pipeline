@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment {
+        IMAGE_NAME = 'erandamadusanka/node-app'
+    }
     
     stages {
         stage('SCM Checkout') {
@@ -11,21 +14,25 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t adomicarts/nodeapp-cuban:${BUILD_NUMBER} .'
+                sh 'docker build -t ${IMAGE_NAME}:${BUILD_NUMBER} .'
             }
         }
         stage('Login to Docker Hub') {
             steps {
-                withCredentials([string(credentialsId: 'samin-docker', variable: 'samindocker')]) {
-                    script {  
-                        sh "docker login -u adomicarts -p '${samindocker}'"
+                withCredentials([string(credentialsId: 'dockerhub-password', variable: 'DOCKER_PASSWORD')])  {
+                   
+                    script {
+                        
+                        sh """
+                            echo ${DOCKER_PASSWORD} | docker login -u erandamadusanka --password-stdin
+                        """
                     }
                 }
             }
         }
         stage('Push Image') {
             steps {
-                sh "docker push adomicarts/nodeapp-cuban:${BUILD_NUMBER}"
+                sh "docker push ${IMAGE_NAME}:${BUILD_NUMBER}"
             }
         }
     }
