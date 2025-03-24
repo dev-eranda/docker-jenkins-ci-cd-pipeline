@@ -1,9 +1,9 @@
 # CI/CD Pipeline with Docker and Jenkins
 
-**Developed By:** Eranda Samarasinghe
+**Developed by:** Eranda Samarasinghe
 <hr />
 
-## Project Backgroud and Overview
+## Project Background and Overview
 This repository contains code for setting up a Continuous Integration/Continuous Deployment (CI/CD) pipeline using Docker and Jenkins. The pipeline automates the process of building, testing, and deploying applications, ensuring efficiency and consistency in software development workflows
 <hr />
 
@@ -16,7 +16,7 @@ Core technologies used:
 ## Requirements
 - GitHub account
 - Jenkins server
-- DockerHub account
+- Docker Hub account
 - Docker installed on Jenkins server
   
 ## Installation
