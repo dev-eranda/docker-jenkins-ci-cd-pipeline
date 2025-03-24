@@ -22,7 +22,7 @@ Core technologies used:
 ## Installation
 1. Clone repository:
    ```sh
-   git clone https://github.com/dev-eranda/docker-jenkins-ci-cd-pipeline
+   git clone https://github.com/dev-eranda/docker-jenkins-ci-cd-pipeline.git
    
 2. Set up Jenkins on your server and configure it to monitor the GitHub repository for changes.
 3. Ensure you have an account on DockerHub where Jenkins can push Docker images. 
